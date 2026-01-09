@@ -1,3 +1,5 @@
+[![npm version](https://img.shields.io/npm/v/caml-lint.svg)](https://www.npmjs.com/package/caml-lint)
+[![npm downloads](https://img.shields.io/npm/dm/caml-lint.svg)](https://www.npmjs.com/package/caml-lint)
 ## Why this exists
 
 CAML-Lint helps game and narrative tool developers catch structural bugs
