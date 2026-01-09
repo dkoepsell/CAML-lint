@@ -1,3 +1,9 @@
+## Why this exists
+
+CAML-Lint helps game and narrative tool developers catch structural bugs
+in adventure and quest data **without changing how they write or run games**.
+
+It is designed to sit alongside Ink, Yarn, Twine, Unity, VTTs, and custom engines.
 # CAML-Lint
 
 Validate and **explain** CAML adventure files.
