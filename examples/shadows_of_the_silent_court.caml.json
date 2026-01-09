@@ -1,0 +1,189 @@
+{
+  "id": "adventure.shadows_of_the_silent_court",
+  "type": "AdventureModule",
+  "name": "Shadows of the Silent Court",
+  "description": "The kingdom stands on a knife's edge. As whispers of betrayal echo through the corridors of power, the Silent Court convenes in secrecy. The party is summoned to navigate the web of intrigue and restore balance.",
+  "synopsis": "The party is summoned to navigate the web of intrigue and restore balance within the Silent Court.",
+  "author": "Everdice DM Toolkit",
+  "version": "1.0.0",
+  "ruleset": "dnd5e",
+  "minLevel": 6,
+  "maxLevel": 10,
+  "setting": "low-magic",
+  "startingLocation": "location.the_silent_court",
+  "locations": [
+    {
+      "id": "location.the_silent_court",
+      "type": "Location",
+      "name": "The Silent Court",
+      "description": "A grand yet somber hall where the kingdom's elite gather to discuss matters of state behind closed doors.",
+      "tags": [
+        "political"
+      ],
+      "features": [
+        "hidden passages",
+        "ornate decor"
+      ],
+      "connections": [
+        {
+          "direction": "forward",
+          "target": "location.the_secret_chamber"
+        }
+      ]
+    },
+    {
+      "id": "location.the_secret_chamber",
+      "type": "Location",
+      "name": "The Secret Chamber",
+      "description": "A concealed room beneath the Silent Court, used for clandestine meetings and secret liaisons.",
+      "tags": [
+        "hidden"
+      ],
+      "features": [
+        "concealed entrance",
+        "whispering walls"
+      ],
+      "connections": []
+    }
+  ],
+  "npcs": [
+    {
+      "id": "npc.elwyn_thorne",
+      "type": "NPC",
+      "name": "Elwyn Thorne",
+      "description": "A shrewd and calculating lord, known for his diplomatic prowess and shadowy dealings.",
+      "race": "Human",
+      "class": "Noble",
+      "role": "neutral",
+      "personality": "Serves as QuestGiver",
+      "motivations": "Has their own agenda",
+      "attitude": "neutral",
+      "startsAt": "location.the_silent_court",
+      "ruleset": "dnd5e"
+    },
+    {
+      "id": "npc.aria_moonshadow",
+      "type": "NPC",
+      "name": "Aria Moonshadow",
+      "description": "A skilled spy and information broker, working for the highest bidder within the court.",
+      "race": "Elf",
+      "class": "Rogue",
+      "role": "ally",
+      "personality": "friendly disposition",
+      "motivations": "Helps the party",
+      "attitude": "neutral",
+      "startsAt": "location.the_secret_chamber",
+      "ruleset": "dnd5e"
+    }
+  ],
+  "encounters": [
+    {
+      "id": "encounter.the_gathering_of_shadows",
+      "type": "Encounter",
+      "name": "The Gathering of Shadows",
+      "description": "The party must navigate the intricacies of court politics, gathering allies and uncovering plots during a formal gathering.",
+      "encounterType": "social",
+      "challengeRating": "Appropriate for level 6-10",
+      "occursAt": "location.the_silent_court",
+      "gates": {
+        "all": [
+          "party.at(location.the_silent_court)"
+        ]
+      },
+      "outcomes": {
+        "success": [
+          {
+            "addTag": "encounter.the_gathering_of_shadows.resolved"
+          },
+          {
+            "modifyAttitude": {
+              "target": "involved_npcs",
+              "change": "+1"
+            }
+          }
+        ],
+        "failure": [
+          {
+            "addTag": "encounter.the_gathering_of_shadows.failed"
+          },
+          {
+            "modifyAttitude": {
+              "target": "involved_npcs",
+              "change": "-1"
+            }
+          }
+        ]
+      },
+      "setup": "Takes place at The Silent Court",
+      "tactics": "Use diplomacy, persuasion, or intimidation. Role-play the interaction.",
+      "treasure": "Level-appropriate rewards"
+    },
+    {
+      "id": "encounter.secrets_unveiled",
+      "type": "Encounter",
+      "name": "Secrets Unveiled",
+      "description": "The party discovers hidden truths and potential allies in the Secret Chamber, revealing who can be trusted.",
+      "encounterType": "exploration",
+      "challengeRating": "Appropriate for level 6-10",
+      "occursAt": "location.the_secret_chamber",
+      "gates": {
+        "all": [
+          "party.at(location.the_secret_chamber)"
+        ]
+      },
+      "outcomes": {
+        "success": [
+          {
+            "addTag": "encounter.secrets_unveiled.completed"
+          }
+        ],
+        "failure": [
+          {
+            "addTag": "encounter.secrets_unveiled.failed"
+          }
+        ]
+      },
+      "setup": "Takes place at The Secret Chamber",
+      "tactics": "Investigate the area, search for clues, and discover secrets.",
+      "treasure": "Standard resolution"
+    }
+  ],
+  "quests": [
+    {
+      "id": "quest.stabilize_the_court",
+      "type": "Quest",
+      "name": "Stabilize the Court",
+      "description": "Lord Elwyn tasks the party with uncovering the source of dissent within the Silent Court and ensuring the kingdom's stability.",
+      "tags": [
+        "main"
+      ],
+      "questGiver": "npc.elwyn_thorne",
+      "objectives": [
+        {
+          "id": "objective.0",
+          "description": "The Gathering of Shadows"
+        }
+      ],
+      "rewards": {
+        "description": "Experience points and treasure"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "item.sigil_of_the_court",
+      "type": "Item",
+      "name": "Sigil of the Court",
+      "description": "An emblem that grants the bearer the authority to speak on behalf of the Silent Court.",
+      "itemType": "magic_item",
+      "rarity": "rare",
+      "rulesetExtension": {
+        "dnd5e": {
+          "mechanics": "Notable magical properties"
+        }
+      }
+    }
+  ],
+  "factions": [],
+  "handouts": []
+}

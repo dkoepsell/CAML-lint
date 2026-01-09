@@ -1,0 +1,28 @@
+{
+  "name": "caml-lint",
+  "version": "0.1.0",
+  "description": "Validate and explain CAML adventure files (CAML Lite). Works alongside existing tools (Ink/Yarn/Unity/VTTs).",
+  "bin": {
+    "caml-lint": "./bin/caml-lint.js"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "node ./bin/caml-lint.js ./examples/the_tempests_wrath.caml.json && node ./bin/caml-lint.js ./examples/shadows_of_the_silent_court.caml.json",
+    "validate": "node ./bin/caml-lint.js"
+  },
+  "keywords": [
+    "caml",
+    "ttrpg",
+    "rpg",
+    "lint",
+    "json-schema",
+    "narrative",
+    "game-dev"
+  ],
+  "author": "Everdice DM Toolkit",
+  "license": "MIT",
+  "dependencies": {
+    "ajv": "^8.12.0",
+    "chalk": "^5.3.0"
+  }
+}

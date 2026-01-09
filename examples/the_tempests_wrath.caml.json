@@ -1,0 +1,610 @@
+{
+  "id": "adventure.the_tempest_s_wrath",
+  "type": "AdventureModule",
+  "name": "The Tempest's Wrath",
+  "description": "A D&D adventure awaits brave heroes",
+  "synopsis": "An epic adventure awaits!",
+  "author": "Everdice DM Toolkit",
+  "version": "1.0.0",
+  "ruleset": "dnd5e",
+  "minLevel": 11,
+  "maxLevel": 15,
+  "setting": "nautical",
+  "startingLocation": "location.port_harbor",
+  "locations": [
+    {
+      "id": "location.port_harbor",
+      "type": "Location",
+      "name": "Port Harbor",
+      "description": "A bustling port where ships come and go, and the adventure begins.",
+      "tags": [
+        "dungeon"
+      ],
+      "features": [],
+      "connections": [
+        {
+          "direction": "forward",
+          "target": "location.coral_reef"
+        }
+      ]
+    },
+    {
+      "id": "location.coral_reef",
+      "type": "Location",
+      "name": "Coral Reef",
+      "description": "A vibrant underwater ecosystem, teeming with life and hidden dangers.",
+      "tags": [
+        "dungeon"
+      ],
+      "features": [],
+      "connections": [
+        {
+          "direction": "forward",
+          "target": "location.shipwreck_cove"
+        }
+      ]
+    },
+    {
+      "id": "location.shipwreck_cove",
+      "type": "Location",
+      "name": "Shipwreck Cove",
+      "description": "A treacherous area littered with the remains of lost ships.",
+      "tags": [
+        "dungeon"
+      ],
+      "features": [],
+      "connections": [
+        {
+          "direction": "forward",
+          "target": "location.mystic_isle"
+        }
+      ]
+    },
+    {
+      "id": "location.mystic_isle",
+      "type": "Location",
+      "name": "Mystic Isle",
+      "description": "A mysterious island shrouded in fog, rumored to be home to a powerful entity.",
+      "tags": [
+        "dungeon"
+      ],
+      "features": [],
+      "connections": [
+        {
+          "direction": "forward",
+          "target": "location.crystal_grotto"
+        }
+      ]
+    },
+    {
+      "id": "location.crystal_grotto",
+      "type": "Location",
+      "name": "Crystal Grotto",
+      "description": "An enchanting cave filled with luminescent crystals.",
+      "tags": [
+        "dungeon"
+      ],
+      "features": [],
+      "connections": [
+        {
+          "direction": "forward",
+          "target": "location.tranquil_lagoon"
+        }
+      ]
+    },
+    {
+      "id": "location.tranquil_lagoon",
+      "type": "Location",
+      "name": "Tranquil Lagoon",
+      "description": "A serene body of water, offering respite to weary sailors.",
+      "tags": [
+        "dungeon"
+      ],
+      "features": [],
+      "connections": [
+        {
+          "direction": "forward",
+          "target": "location.ancient_ruins"
+        }
+      ]
+    },
+    {
+      "id": "location.ancient_ruins",
+      "type": "Location",
+      "name": "Ancient Ruins",
+      "description": "Ruins of a forgotten civilization, holding secrets of the past.",
+      "tags": [
+        "dungeon"
+      ],
+      "features": [],
+      "connections": [
+        {
+          "direction": "forward",
+          "target": "location.merfolk_village"
+        }
+      ]
+    },
+    {
+      "id": "location.merfolk_village",
+      "type": "Location",
+      "name": "Merfolk Village",
+      "description": "An underwater settlement inhabited by merfolk, known for their wise council.",
+      "tags": [
+        "dungeon"
+      ],
+      "features": [],
+      "connections": []
+    }
+  ],
+  "npcs": [
+    {
+      "id": "npc.captain_silas",
+      "type": "NPC",
+      "name": "Captain Silas",
+      "description": "A seasoned sailor with a weathered face and a stern demeanor.",
+      "race": "Human",
+      "class": "Commoner",
+      "role": "neutral",
+      "personality": "neutral disposition",
+      "motivations": "Has their own agenda",
+      "attitude": "neutral",
+      "startsAt": "location.port_harbor",
+      "ruleset": "dnd5e"
+    },
+    {
+      "id": "npc.first_mate_iona",
+      "type": "NPC",
+      "name": "First Mate Iona",
+      "description": "A quick-witted navigator with a knack for reading the stars.",
+      "race": "Human",
+      "class": "Commoner",
+      "role": "ally",
+      "personality": "friendly disposition",
+      "motivations": "Helps the party",
+      "attitude": "neutral",
+      "startsAt": "location.coral_reef",
+      "ruleset": "dnd5e"
+    },
+    {
+      "id": "npc.boatswain_harold",
+      "type": "NPC",
+      "name": "Boatswain Harold",
+      "description": "A gruff yet loyal crew member, knowledgeable in ship repairs.",
+      "race": "Human",
+      "class": "Commoner",
+      "role": "enemy",
+      "personality": "hostile disposition",
+      "motivations": "Opposes the party",
+      "attitude": "neutral",
+      "startsAt": "location.shipwreck_cove",
+      "ruleset": "dnd5e"
+    },
+    {
+      "id": "npc.quartermaster_kira",
+      "type": "NPC",
+      "name": "Quartermaster Kira",
+      "description": "Responsible for the ship's supplies, Kira is meticulous and resourceful.",
+      "race": "Human",
+      "class": "Commoner",
+      "role": "ally",
+      "personality": "friendly disposition",
+      "motivations": "Helps the party",
+      "attitude": "neutral",
+      "startsAt": "location.mystic_isle",
+      "ruleset": "dnd5e"
+    },
+    {
+      "id": "npc.sailor_tom",
+      "type": "NPC",
+      "name": "Sailor Tom",
+      "description": "A jovial sailor who loves sharing tales of the sea.",
+      "race": "Human",
+      "class": "Commoner",
+      "role": "neutral",
+      "personality": "neutral disposition",
+      "motivations": "Has their own agenda",
+      "attitude": "neutral",
+      "startsAt": "location.crystal_grotto",
+      "ruleset": "dnd5e"
+    },
+    {
+      "id": "npc.fisherman_luke",
+      "type": "NPC",
+      "name": "Fisherman Luke",
+      "description": "An old fisherman with tales of strange sightings at sea.",
+      "race": "Human",
+      "class": "Commoner",
+      "role": "ally",
+      "personality": "friendly disposition",
+      "motivations": "Helps the party",
+      "attitude": "neutral",
+      "startsAt": "location.tranquil_lagoon",
+      "ruleset": "dnd5e"
+    },
+    {
+      "id": "npc.merchant_lorraine",
+      "type": "NPC",
+      "name": "Merchant Lorraine",
+      "description": "A shrewd businesswoman with connections across the ports.",
+      "race": "Human",
+      "class": "Commoner",
+      "role": "neutral",
+      "personality": "neutral disposition",
+      "motivations": "Has their own agenda",
+      "attitude": "neutral",
+      "startsAt": "location.ancient_ruins",
+      "ruleset": "dnd5e"
+    },
+    {
+      "id": "npc.hermit_milo",
+      "type": "NPC",
+      "name": "Hermit Milo",
+      "description": "A recluse living on a remote island, rumored to know ancient secrets.",
+      "race": "Human",
+      "class": "Commoner",
+      "role": "neutral",
+      "personality": "mysterious disposition",
+      "motivations": "Has their own agenda",
+      "attitude": "neutral",
+      "startsAt": "location.merfolk_village",
+      "ruleset": "dnd5e"
+    },
+    {
+      "id": "npc.pc_party",
+      "type": "NPC",
+      "name": "PC Party",
+      "description": "The adventuring party embarking on the nautical journey.",
+      "race": "Human",
+      "class": "Commoner",
+      "role": "neutral",
+      "personality": "neutral disposition",
+      "motivations": "Has their own agenda",
+      "attitude": "neutral",
+      "startsAt": "location.port_harbor",
+      "ruleset": "dnd5e"
+    }
+  ],
+  "encounters": [
+    {
+      "id": "encounter.process_stormy_seas",
+      "type": "Encounter",
+      "name": "process.stormy seas",
+      "description": "A standard encounter",
+      "encounterType": "combat",
+      "challengeRating": "Appropriate for level 11-15",
+      "occursAt": "location.port_harbor",
+      "gates": {
+        "all": [
+          "party.at(location.port_harbor)"
+        ]
+      },
+      "outcomes": {
+        "success": [
+          {
+            "addTag": "encounter.process_stormy_seas.defeated"
+          },
+          {
+            "grantItem": "Standard resolution"
+          }
+        ],
+        "failure": [
+          {
+            "addTag": "encounter.process_stormy_seas.fled"
+          }
+        ]
+      },
+      "setup": "Set up as described",
+      "tactics": "Standard approach",
+      "treasure": "Standard resolution"
+    },
+    {
+      "id": "encounter.process_coral_reef_dive",
+      "type": "Encounter",
+      "name": "process.coral reef dive",
+      "description": "A standard encounter",
+      "encounterType": "combat",
+      "challengeRating": "Appropriate for level 11-15",
+      "occursAt": "location.port_harbor",
+      "gates": {
+        "all": [
+          "party.at(location.port_harbor)"
+        ]
+      },
+      "outcomes": {
+        "success": [
+          {
+            "addTag": "encounter.process_coral_reef_dive.defeated"
+          },
+          {
+            "grantItem": "Standard resolution"
+          }
+        ],
+        "failure": [
+          {
+            "addTag": "encounter.process_coral_reef_dive.fled"
+          }
+        ]
+      },
+      "setup": "Set up as described",
+      "tactics": "Standard approach",
+      "treasure": "Standard resolution"
+    },
+    {
+      "id": "encounter.process_shipwreck_salvage",
+      "type": "Encounter",
+      "name": "process.shipwreck salvage",
+      "description": "A standard encounter",
+      "encounterType": "combat",
+      "challengeRating": "Appropriate for level 11-15",
+      "occursAt": "location.port_harbor",
+      "gates": {
+        "all": [
+          "party.at(location.port_harbor)"
+        ]
+      },
+      "outcomes": {
+        "success": [
+          {
+            "addTag": "encounter.process_shipwreck_salvage.defeated"
+          },
+          {
+            "grantItem": "Standard resolution"
+          }
+        ],
+        "failure": [
+          {
+            "addTag": "encounter.process_shipwreck_salvage.fled"
+          }
+        ]
+      },
+      "setup": "Set up as described",
+      "tactics": "Standard approach",
+      "treasure": "Standard resolution"
+    },
+    {
+      "id": "encounter.process_island_encounter",
+      "type": "Encounter",
+      "name": "process.island encounter",
+      "description": "A standard encounter",
+      "encounterType": "combat",
+      "challengeRating": "Appropriate for level 11-15",
+      "occursAt": "location.port_harbor",
+      "gates": {
+        "all": [
+          "party.at(location.port_harbor)"
+        ]
+      },
+      "outcomes": {
+        "success": [
+          {
+            "addTag": "encounter.process_island_encounter.defeated"
+          },
+          {
+            "grantItem": "Standard resolution"
+          }
+        ],
+        "failure": [
+          {
+            "addTag": "encounter.process_island_encounter.fled"
+          }
+        ]
+      },
+      "setup": "Set up as described",
+      "tactics": "Standard approach",
+      "treasure": "Standard resolution"
+    },
+    {
+      "id": "encounter.process_merfolk_negotiation",
+      "type": "Encounter",
+      "name": "process.merfolk negotiation",
+      "description": "A standard encounter",
+      "encounterType": "combat",
+      "challengeRating": "Appropriate for level 11-15",
+      "occursAt": "location.port_harbor",
+      "gates": {
+        "all": [
+          "party.at(location.port_harbor)"
+        ]
+      },
+      "outcomes": {
+        "success": [
+          {
+            "addTag": "encounter.process_merfolk_negotiation.defeated"
+          },
+          {
+            "grantItem": "Standard resolution"
+          }
+        ],
+        "failure": [
+          {
+            "addTag": "encounter.process_merfolk_negotiation.fled"
+          }
+        ]
+      },
+      "setup": "Set up as described",
+      "tactics": "Standard approach",
+      "treasure": "Standard resolution"
+    },
+    {
+      "id": "encounter.process_ruins_exploration",
+      "type": "Encounter",
+      "name": "process.ruins exploration",
+      "description": "A standard encounter",
+      "encounterType": "combat",
+      "challengeRating": "Appropriate for level 11-15",
+      "occursAt": "location.port_harbor",
+      "gates": {
+        "all": [
+          "party.at(location.port_harbor)"
+        ]
+      },
+      "outcomes": {
+        "success": [
+          {
+            "addTag": "encounter.process_ruins_exploration.defeated"
+          },
+          {
+            "grantItem": "Standard resolution"
+          }
+        ],
+        "failure": [
+          {
+            "addTag": "encounter.process_ruins_exploration.fled"
+          }
+        ]
+      },
+      "setup": "Set up as described",
+      "tactics": "Standard approach",
+      "treasure": "Standard resolution"
+    }
+  ],
+  "quests": [
+    {
+      "id": "quest.quest_from_npc",
+      "type": "Quest",
+      "name": "Quest from NPC",
+      "description": "A quest given by an NPC",
+      "tags": [
+        "main"
+      ],
+      "questGiver": "npc.captain_silas",
+      "objectives": [
+        {
+          "id": "objective.0",
+          "description": "Complete objective"
+        },
+        {
+          "id": "objective.1",
+          "description": "Complete objective"
+        },
+        {
+          "id": "objective.2",
+          "description": "Complete objective"
+        },
+        {
+          "id": "objective.3",
+          "description": "Complete objective"
+        },
+        {
+          "id": "objective.4",
+          "description": "Complete objective"
+        },
+        {
+          "id": "objective.5",
+          "description": "Complete objective"
+        }
+      ],
+      "rewards": {
+        "description": "Adventure rewards"
+      }
+    },
+    {
+      "id": "quest.quest_from_npc",
+      "type": "Quest",
+      "name": "Quest from NPC",
+      "description": "A quest given by an NPC",
+      "tags": [
+        "side"
+      ],
+      "questGiver": "npc.first_mate_iona",
+      "objectives": [
+        {
+          "id": "objective.0",
+          "description": "Complete objective"
+        },
+        {
+          "id": "objective.1",
+          "description": "Complete objective"
+        },
+        {
+          "id": "objective.2",
+          "description": "Complete objective"
+        },
+        {
+          "id": "objective.3",
+          "description": "Complete objective"
+        },
+        {
+          "id": "objective.4",
+          "description": "Complete objective"
+        },
+        {
+          "id": "objective.5",
+          "description": "Complete objective"
+        }
+      ],
+      "rewards": {
+        "description": "Adventure rewards"
+      }
+    }
+  ],
+  "items": [
+    {
+      "id": "item.trident_of_the_seas",
+      "type": "Item",
+      "name": "Trident of the Seas",
+      "description": "A powerful weapon that commands the waves.",
+      "itemType": "magic_item",
+      "rarity": "uncommon",
+      "rulesetExtension": {
+        "dnd5e": {
+          "mechanics": "Useful magical properties"
+        }
+      }
+    },
+    {
+      "id": "item.mystical_compass",
+      "type": "Item",
+      "name": "Mystical Compass",
+      "description": "A compass that points to what the heart desires.",
+      "itemType": "magic_item",
+      "rarity": "uncommon",
+      "rulesetExtension": {
+        "dnd5e": {
+          "mechanics": "Useful magical properties"
+        }
+      }
+    },
+    {
+      "id": "item.potion_of_water_breathing",
+      "type": "Item",
+      "name": "Potion of Water Breathing",
+      "description": "A potion allowing temporary underwater exploration.",
+      "itemType": "magic_item",
+      "rarity": "uncommon",
+      "rulesetExtension": {
+        "dnd5e": {
+          "mechanics": "Useful magical properties"
+        }
+      }
+    },
+    {
+      "id": "item.pearls_of_wisdom",
+      "type": "Item",
+      "name": "Pearls of Wisdom",
+      "description": "Magical pearls that grant insight into ancient knowledge.",
+      "itemType": "magic_item",
+      "rarity": "uncommon",
+      "rulesetExtension": {
+        "dnd5e": {
+          "mechanics": "Useful magical properties"
+        }
+      }
+    },
+    {
+      "id": "item.shell_of_echoes",
+      "type": "Item",
+      "name": "Shell of Echoes",
+      "description": "A shell that amplifies sounds, revealing hidden messages.",
+      "itemType": "magic_item",
+      "rarity": "uncommon",
+      "rulesetExtension": {
+        "dnd5e": {
+          "mechanics": "Useful magical properties"
+        }
+      }
+    }
+  ],
+  "factions": [],
+  "handouts": []
+}

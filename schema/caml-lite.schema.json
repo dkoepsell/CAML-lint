@@ -1,0 +1,294 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CAML Lite Adventure Schema",
+  "description": "A minimal, developer-friendly schema for CAML adventure modules. Designed for validation and basic tooling integration (not full CAML 2.0).",
+  "type": "object",
+  "required": [
+    "id",
+    "type",
+    "name",
+    "locations",
+    "npcs",
+    "encounters"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "type": {
+      "const": "AdventureModule"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "description": {
+      "type": "string"
+    },
+    "synopsis": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "ruleset": {
+      "type": "string"
+    },
+    "minLevel": {
+      "type": "integer"
+    },
+    "maxLevel": {
+      "type": "integer"
+    },
+    "setting": {
+      "type": "string"
+    },
+    "startingLocation": {
+      "type": "string"
+    },
+    "locations": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/location"
+      }
+    },
+    "npcs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/npc"
+      }
+    },
+    "encounters": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/encounter"
+      }
+    },
+    "quests": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/quest"
+      }
+    },
+    "items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/item"
+      }
+    },
+    "factions": {
+      "type": "array"
+    },
+    "handouts": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true,
+  "definitions": {
+    "location": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "name"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "const": "Location"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "connections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "target"
+            ],
+            "properties": {
+              "direction": {
+                "type": "string"
+              },
+              "target": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "npc": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "name"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "const": "NPC"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "startsAt": {
+          "type": "string"
+        },
+        "role": {
+          "type": "string"
+        },
+        "attitude": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    },
+    "encounter": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "occursAt"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "const": "Encounter"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "encounterType": {
+          "type": "string"
+        },
+        "challengeRating": {
+          "type": "string"
+        },
+        "occursAt": {
+          "type": "string",
+          "minLength": 1
+        },
+        "gates": {
+          "type": "object"
+        },
+        "outcomes": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": true
+    },
+    "quest": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "name"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "const": "Quest"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "questGiver": {
+          "type": "string"
+        },
+        "objectives": {
+          "type": "array"
+        },
+        "rewards": {
+          "type": "object"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "item": {
+      "type": "object",
+      "required": [
+        "id",
+        "type",
+        "name"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "type": {
+          "const": "Item"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": {
+          "type": "string"
+        },
+        "itemType": {
+          "type": "string"
+        },
+        "rarity": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}
